@@ -38,6 +38,36 @@
     <h2>THE FIG TREE</h2>
     <h2>JAZEL'S CATTITUDES</h2>
   </section>
+  <section class="stack">
+    <h2>Tech Stack</h2>
+    <ul>
+      <li>Java</li>
+      <li>Python</li>
+      <li>PHP</li>
+      <li>Javascript</li>
+      <li>CSS</li>
+      <li>React</li>
+      <li>Angular</li>
+      <li>Svelte</li>
+      <li>HTML</li>
+      <li>HTMX</li>
+      <li>Mysql</li>
+      <li>Postgres</li>
+    </ul>
+  </section>
+  <section class="contacts">
+    <ul class="contacts__ul">
+      <li class="contacts__ul-li">
+        <span>Linkedin</span>
+      </li>
+      <li class="contacts__ul-li">
+        <span>Email</span>
+      </li>
+      <li class="contacts__ul-li">
+        <span>Telegram</span>
+      </li>
+    </ul>
+  </section>
 </div>
 
 <style>
@@ -107,6 +137,30 @@
     grid-template-columns: 
       repeat(auto-fill, minmax(150px, 1fr));
     gap: var(--space-m);
-    font-weight: bolder;
+  }
+
+  .stack{
+    display: grid;
+    grid-template-columns: 
+      repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--space-m);
+  }
+
+  .contacts{
+    display: grid;
+    min-height: 100vh;
+    align-items: center;
+    padding: 0 var(--space-s);
+  }
+
+  .contacts__ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contacts__ul-li{
+    display: flex;
+    align-items: center;
   }
 </style>
