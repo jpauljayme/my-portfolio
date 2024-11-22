@@ -1,31 +1,46 @@
 <script lang="ts">
-  import blender from './assets/book.webp';
+    import Header from "./lib/Header/Header.svelte";
+
+    let toggle : boolean = $state(false);
 </script>
 
 <div class="wrapper">
-  <div class="menu">
-    <span class="menu__text">Menu</span>
-  </div>
-  <header class="header">
-    <h1 class="header__title col">
-      <span>The pages of</span>
-      <br>
-      <span>John Paul Jayme</span>
-    </h1>
-    <ul class="header__links">
-      <li>Web</li>
-      <li>Design</li>
-      <li>Development</li>
-      <li>Literature</li>
-      <li>Reviews</li>
-      <li>Organic</li>
-      <li>Volunteering</li>
-      <li>Cats and Dogs</li>
-    </ul>
-    <div class="header__hero">
-      <img class="hero__book" alt="My artwork" src={blender} />
+  <button class="menu" onclick={() => toggle = !toggle}
+    aria-expanded={toggle}
+    >
+    <span class="menu__text {toggle? 'toggle-nav' : ''}">Menu</span>
+  </button>
+  <nav class="overlay {toggle? 'toggle' : ''}">
+    <div>
+      <a href="/" class="writing-m">
+        <span>The pages of John</span>
+        <br>
+        <span>Paul Jayme</span>
+      </a>
     </div>
-  </header>
+    <div>
+      <ul class="overlay__sections">
+        <li>
+          <a class="writing-m" href="/">Works</a>
+        </li>
+        <li>
+          <a class="writing-m" href="/">
+            Info
+          </a>
+        </li>
+        <li>
+          <a class="writing-m" href="/">
+            Contacts
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="overlay__copy writing-m">
+      © 2024
+    </div>
+  </nav>
+
+  <Header />
   <section class="about">
     <h2>About</h2>
     <h3>
@@ -34,37 +49,52 @@
     </h3>
   </section>
   <section class="projects">
-    <h2>CEBOOKLUB</h2>
-    <h2>THE FIG TREE</h2>
-    <h2>JAZEL'S CATTITUDES</h2>
+    <h2 class="projects__title">
+      Projects
+    </h2>
+    <ul class="projects__ul">
+      <li>
+        <a href="http://157.245.144.28/cebooklub-rewind" target="_blank">CEBOOKLUB</a>
+      </li>
+      <li>
+        <a href="#">THE FIG TREE</a>
+      </li>
+      <li>
+        <a href="#">
+          MY CATTITUDES
+        </a>
+      </li>
+    </ul>
   </section>
   <section class="stack">
     <h2>Tech Stack</h2>
-    <ul>
-      <li>Java</li>
-      <li>Python</li>
-      <li>PHP</li>
-      <li>Javascript</li>
-      <li>CSS</li>
-      <li>React</li>
-      <li>Angular</li>
-      <li>Svelte</li>
-      <li>HTML</li>
-      <li>HTMX</li>
-      <li>Mysql</li>
-      <li>Postgres</li>
+    <ul class="stack__ul">
+      <li><span>Java</span></li>
+      <li><span>Python</span></li>
+      <li><span>PHP</span></li>
+      <li><span>script</span></li>
+      <li><span>CSS</span></li>
+      <li><span>React</span></li>
+      <li><span>Angular</span></li>
+      <li><span>Svelte</span></li>
+      <li><span>HTML</span></li>
+      <li><span>HTMX</span></li>
+      <li><span>Mysql</span></li>
+      <li><span>Postgresql</span></li>
     </ul>
   </section>
   <section class="contacts">
     <ul class="contacts__ul">
       <li class="contacts__ul-li">
-        <span>Linkedin</span>
+        <a href="https://www.linkedin.com/in/dev-jprjayme"
+          target="_blank"
+        >Linkedin</a>
       </li>
       <li class="contacts__ul-li">
-        <span>Email</span>
+        <a href="mailto:jp.r.jayme@gmail.com">Email</a>
       </li>
       <li class="contacts__ul-li">
-        <span>Telegram</span>
+        <a href="https://t.me/srzlyjp">Telegram</a>
       </li>
     </ul>
   </section>
@@ -72,24 +102,49 @@
 
 <style>
   .wrapper {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
-    gap: var(--space-m);
+    gap: var(--space-m); */
+    display: contents;
   }
 
-  .header {
+  .writing-m{
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: right;
+    color: white;
+  }
+
+  .overlay{
     display: grid;
-    /* grid-template-rows: min-content auto; */
-    min-height: 100vh;
-    gap: var(--space-m);
-    position: relative;
-    align-content: start;
-    overflow: hidden;
+    grid-template-columns: repeat(3, 1fr);
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    z-index: 5;
+    color: white;
+    transition: pacity 0.3s ease;
     padding: var(--space-s);
   }
 
+  .overlay__sections{
+    display: flex;
+  }
+
+  .overlay__copy{
+    position: fixed;
+    bottom: var(--space-s);
+    right: var(--space-s);
+  }
+
   .menu {
+    all: unset;
+    font: inherit;
     position: fixed;
     top: var(--space-s);
     right: var(--space-s);
@@ -101,47 +156,33 @@
   .menu__text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+    color:black;
   }
 
-  .header__hero{
-    padding: var(--space-m);
-    cursor: grab;
-    position: relative;
-    aspect-ratio: 1/1;
-    transform-style: preserve-3d;
-    perspective: 2000px;
+  .toggle{
+    visibility: visible;
   }
 
-  .hero__book{
-    animation: rotate 15s linear infinite;
-    -moz-animation: rotate 15s linear infinite;
-    transform-style: preserve-3d;
-    display: block;
-    position: absolute; 
-
-    width: 80%;
-  }
-
-  @keyframes rotate {
-    from {
-        transform: rotateY(0deg);
-    }
-    to {
-        transform: rotateY(360deg);
-    }
+  .toggle-nav{
+    color: white;
   }
 
   .about{
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 2.16fr);
       gap: var(--space-m);
+      padding: var(--space-m);
     }
 
   .projects{
     display: grid;
-    grid-template-columns: 
-      repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2.16fr);
+      /* repeat(auto-fill, minmax(min(400px, 100%), 1fr)); */
     gap: var(--space-m);
+    padding: var(--space-m);
+  }
+
+  .projects__ul{
   }
 
   .stack{
@@ -149,6 +190,7 @@
     grid-template-columns: 
       repeat(auto-fill, minmax(150px, 1fr));
     gap: var(--space-m);
+    padding: var(--space-m);
   }
 
   .contacts{
@@ -162,6 +204,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: var(--space-l);
   }
 
   .contacts__ul-li{
@@ -177,17 +220,6 @@
 
 /* Laptop */
 @media (min-width: 760px) {
-    .header{
-        grid-template-columns: minmax(0, 2.06fr) minmax(0, 1fr);
-    }
-
-    .header__hero{
-        top: 50%;
-        left: 50%;
-        width: 100vh;
-        height: 100vh;
-        margin: -40vh;
-    }
 }
 
 /* Desktop */
