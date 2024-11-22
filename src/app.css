@@ -36,6 +36,10 @@ li{
     list-style: none;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
 /* Tablets */
 @media (min-width: 550px) {
     html{
