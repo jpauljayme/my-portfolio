@@ -1,26 +1,30 @@
+@font-face {
+    font-family: "Apfel Grotezk";
+    src: url("./assets/fonts/ApfelGrotezk-Regular.woff2") format("woff2"),
+    url("./assets/fonts/ApfelGrotezk-Regular.woff") format("woff");
+}
+
 :root{
     --space-s: .2rem;
     --space-m: .66rem;
     --space-l: 1rem;
+    font-family: 'Apfel Grotezk','Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5{
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 0;
+}
+
+html{
+    font-size: 7.5vw;
+    line-height: 1;
+    letter-spacing: -.04em;
 }
 
 *{
-    line-height: 1;
-    letter-spacing: -.04em;
-    font-size: 7.5vw;
-}
-
-@font-face {
-    font-family: "Apfel Grotezk";
-    src: url("./assets/fonts/ApfelGrotezk-Regular.woff2") format("woff2");
-}
-
-
-h1, h2, h3, h4, h5{
-    font-family: 'Apfel Grotezk', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    margin: 0 !important;
+    box-sizing: border-box;
 }
 
 ul,li{
@@ -31,3 +35,18 @@ ul,li{
 li{
     list-style: none;
 }
+
+/* Tablets */
+@media (min-width: 550px) {
+    html{
+        font-size: 5vw;
+    }
+}
+
+/* Laptop */
+@media (min-width: 760px) {
+    html{
+        font-size: 3vw;
+    }
+}
+

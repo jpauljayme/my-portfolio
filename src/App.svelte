@@ -1,5 +1,5 @@
 <script lang="ts">
-  import book from "./assets/my_book.png";
+  import blender from './assets/book.webp';
 </script>
 
 <div class="wrapper">
@@ -23,7 +23,7 @@
       <li>Cats and Dogs</li>
     </ul>
     <div class="header__hero">
-      <img class="hero__book" alt="My artwork" src={book} />
+      <img class="hero__book" alt="My artwork" src={blender} />
     </div>
   </header>
   <section class="about">
@@ -80,17 +80,13 @@
 
   .header {
     display: grid;
-    grid-template-rows: min-content auto;
+    /* grid-template-rows: min-content auto; */
     min-height: 100vh;
     gap: var(--space-m);
+    position: relative;
+    align-content: start;
+    overflow: hidden;
     padding: var(--space-s);
-  }
-
-  .header__title {
-    /* display: flex;
-    flex-direction: column; */
-    font-size: 1rem;
-
   }
 
   .menu {
@@ -109,12 +105,21 @@
 
   .header__hero{
     padding: var(--space-m);
+    cursor: grab;
+    position: relative;
+    aspect-ratio: 1/1;
+    transform-style: preserve-3d;
+    perspective: 2000px;
   }
 
   .hero__book{
     animation: rotate 15s linear infinite;
     -moz-animation: rotate 15s linear infinite;
     transform-style: preserve-3d;
+    display: block;
+    position: absolute; 
+
+    width: 80%;
   }
 
   @keyframes rotate {
@@ -135,7 +140,7 @@
   .projects{
     display: grid;
     grid-template-columns: 
-      repeat(auto-fill, minmax(150px, 1fr));
+      repeat(auto-fill, minmax(min(400px, 100%), 1fr));
     gap: var(--space-m);
   }
 
@@ -162,5 +167,31 @@
   .contacts__ul-li{
     display: flex;
     align-items: center;
+    gap: var(--space-l);
   }
+
+
+  /* Tablets */
+@media (min-width: 550px) {
+}
+
+/* Laptop */
+@media (min-width: 760px) {
+    .header{
+        grid-template-columns: minmax(0, 2.06fr) minmax(0, 1fr);
+    }
+
+    .header__hero{
+        top: 50%;
+        left: 50%;
+        width: 100vh;
+        height: 100vh;
+        margin: -40vh;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1500px) {
+    
+}
 </style>
