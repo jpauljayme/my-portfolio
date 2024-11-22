@@ -134,6 +134,7 @@
 
   .overlay__sections{
     display: flex;
+    justify-content: center;
   }
 
   .overlay__copy{
