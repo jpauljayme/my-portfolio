@@ -1,9 +1,9 @@
-<script lang="ts">
+<script>
     import book from "../../assets/images/book.webp";
 </script>
 
 <header class="header">
-    <h1 class="header__title col">
+    <h1 class="header__title">
         <span>The pages of</span>
         <br />
         <span>John Paul Jayme</span>
