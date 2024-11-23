@@ -21,6 +21,3 @@
 </script>
 
 <Layout {currentComponent} />
-
-
-
