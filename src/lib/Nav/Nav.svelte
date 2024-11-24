@@ -1,21 +1,21 @@
 <script>
-    let toggle = false;
+    let toggle = $state(false);
 
-    function toggleNav(){
+    function toggleNav() {
         toggle = !toggle;
     }
 
-    function closeNav(){
+    function closeNav() {
         toggle = false;
     }
 </script>
 
-<button class="menu" on:click={toggleNav} aria-expanded={toggle}>
+<button class="menu" onclick={toggleNav} aria-expanded={toggle}>
     <span class="menu__text {toggle ? 'toggle-nav' : ''}">Menu</span>
 </button>
 <nav class="overlay {toggle ? 'toggle' : ''}">
     <div>
-        <a href="/" class="writing-m on:click={closeNav}">
+        <a href="/jprjayme-works" class="writing-m" onclick={closeNav}>
             <span>The pages of John</span>
             <br />
             <span>Paul Jayme</span>
@@ -24,19 +24,29 @@
     <div>
         <ul class="overlay__sections">
             <li>
-                <a class="writing-m" href="/jprjayme-works/works"
-                    on:click={closeNav}
-                >Works</a>
+                <a
+                    class="writing-m"
+                    href="/jprjayme-works/works"
+                    onclick={closeNav}>Works</a
+                >
             </li>
             <li>
-                <a class="writing-m" href="/jprjayme-works/info"
-                    on:click={closeNav}
-                > Info </a>
+                <a
+                    class="writing-m"
+                    href="/jprjayme-works/info"
+                    onclick={closeNav}
+                >
+                    Info
+                </a>
             </li>
             <li>
-                <a class="writing-m" href="/jprjayme-works/contact"
-                     on:click={closeNav}
-                > Contacts </a>
+                <a
+                    class="writing-m"
+                    href="/jprjayme-works/contact"
+                    onclick={closeNav}
+                >
+                    Contacts
+                </a>
             </li>
         </ul>
     </div>
