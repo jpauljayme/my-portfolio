@@ -1,23 +1,14 @@
 <script>
-  import {onMount} from 'svelte';
-  import page from 'page';
+  import Layout from "./Layout.svelte";
+  import { setupRoutes } from "./routes.svelte.js";
+  import Home from './routes/HomeRoute.svelte'
 
-  import Home from "./routes/HomeRoute.svelte";
-  import Info from "./routes/InfoRoute.svelte";
-  import Contacts from "./routes/ContactsRoute.svelte";
-  import NotFound from "./routes/NotFoundRoute.svelte";  
-  import Works from './routes/WorksRoute.svelte';
-  import Layout from './Layout.svelte';
-  let currentComponent;
+  // Define reactive state for the current component
+  let currentComponent = $state(Home);
 
-  onMount(() => {
-  page('/', () => (currentComponent = Home));
-  page('/info', () => currentComponent = Info);
-  page('/works', () => currentComponent = Works);
-  page('/contact', () => currentComponent = Contacts);
-  page('*', () => (currentComponent = NotFound));
-  page.start();
-  });
+  // Set up routes and pass a function to update the state
+  setupRoutes((component) => (currentComponent = component));
 </script>
 
+<!-- Pass the reactive currentComponent state to the Layout -->
 <Layout {currentComponent} />

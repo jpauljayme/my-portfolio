@@ -15,7 +15,7 @@
 </button>
 <nav class="overlay {toggle ? 'toggle' : ''}">
     <div>
-        <a href="/" class="writing-m"  on:click={closeNav}>
+        <a href="/" class="writing-m on:click={closeNav}">
             <span>The pages of John</span>
             <br />
             <span>Paul Jayme</span>
@@ -24,18 +24,18 @@
     <div>
         <ul class="overlay__sections">
             <li>
-                <a class="writing-m" href="/works"
+                <a class="writing-m" href="/jprjayme-works/works"
                     on:click={closeNav}
                 >Works</a>
             </li>
             <li>
-                <a class="writing-m" href="/info"
+                <a class="writing-m" href="/jprjayme-works/info"
                     on:click={closeNav}
                 > Info </a>
             </li>
             <li>
-                <a class="writing-m" href="/contact"
-                on:click={closeNav}
+                <a class="writing-m" href="/jprjayme-works/contact"
+                     on:click={closeNav}
                 > Contacts </a>
             </li>
         </ul>
