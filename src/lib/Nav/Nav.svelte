@@ -10,9 +10,16 @@
     }
 </script>
 
-<button class="menu" onclick={toggleNav} aria-expanded={toggle}>
+
+<div
+    class="menu"
+    role="button"
+    onclick={toggleNav}
+    aria-expanded={toggle}
+    tabindex="0"
+>
     <span class="menu__text {toggle ? 'toggle-nav' : ''}">Menu</span>
-</button>
+</div>
 <nav class="overlay {toggle ? 'toggle' : ''}">
     <div>
         <a href="/jprjayme-works" class="writing-m" onclick={closeNav}>
@@ -82,6 +89,10 @@
         justify-content: center;
     }
 
+    .overlay__sections li {
+        min-width: 1em;
+    }
+
     .overlay__copy {
         position: fixed;
         bottom: var(--space-s);
@@ -89,20 +100,20 @@
     }
 
     .menu {
-        all: unset;
-        font: inherit;
         position: fixed;
-        top: var(--space-s);
         right: var(--space-s);
-        cursor: pointer;
         z-index: 10;
-        /* padding: var(--space-s); */
+        top: var(--space-s);
+        cursor: pointer;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        text-align: right;
     }
 
     .menu__text {
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
+        display: inline-block;
         color: black;
+        visibility: visible;
     }
 
     .toggle {
@@ -111,5 +122,9 @@
 
     .toggle-nav {
         color: white;
+    }
+
+    /* Laptop */
+    @media (min-width: 760px) {
     }
 </style>

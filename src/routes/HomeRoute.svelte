@@ -27,10 +27,6 @@
 
 <style>
   .wrapper {
-    /* display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, auto);
-    gap: var(--space-m); */
     display: contents;
   }
 
