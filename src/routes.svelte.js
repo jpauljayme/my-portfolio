@@ -8,7 +8,6 @@ import Works from "./routes/WorksRoute.svelte";
 
 // Routing setup
 export function setupRoutes(setComponent) {
-    page.base("/jprjayme-works");
 
     page("/", () => setComponent(Home));
     page("/info", () => setComponent(Info));
