@@ -1,5 +1,5 @@
 <section class="stack">
-    <h2>Tech Stack</h2>
+    <h2>Stack</h2>
     <ul class="stack__ul">
         <li><span>Java</span></li>
         <li><span>Python</span></li>
@@ -19,8 +19,17 @@
 <style>
     .stack {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2.16fr);
         gap: var(--space-m);
-        padding: var(--space-m);
+        /* padding: var(--space-m); */
+        margin-bottom: 5rem;
+    }
+
+        /* Laptop */
+        @media (min-width: 760px) {
+        .stack {
+            grid-template-columns: 1fr;
+            margin-bottom: unset;
+        }
     }
 </style>

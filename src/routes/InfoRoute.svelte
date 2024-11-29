@@ -9,12 +9,11 @@
         <br />
         <span>John Paul Jayme</span>
     </h1>
-    <div>
-        <p>Software Engineering, Web Development, Creating Writing, Literature</p>
+    <div class="header__description">
+        <p>FullStack, Data Engineering</p>
         <p>
-            It took a while for me to be here in these plains, see that the soil is
-            plenty for me to sow the seeds, nurture them through the climates, and
-            reap the gifts of my humble toil. This art-making is my legacy.
+            It took a while for me to get here. But so is the solar system,
+            or the seeds I planted to grow into arrays of green spectacles.
         </p>
     </div>
 </header>
@@ -49,9 +48,6 @@
 <Contacts />
 <style>
     .info__experience {
-        /* display: grid;
-        align-items: center;
-        justify-content: center; */
         min-height: 100vh;
     }
 

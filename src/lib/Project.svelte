@@ -21,6 +21,15 @@
         grid-template-columns: minmax(0, 1fr) minmax(0, 2.16fr);
         /* repeat(auto-fill, minmax(min(400px, 100%), 1fr)); */
         gap: var(--space-m);
-        padding: var(--space-m);
+        margin-bottom: 5rem;
+    }
+
+    /* Laptop */
+    @media (min-width: 760px) {
+        .projects {
+            grid-template-columns: 1fr;
+            margin-bottom: unset;
+            grid-template-rows: min-content;
+        }
     }
 </style>

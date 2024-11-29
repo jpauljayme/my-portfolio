@@ -16,6 +16,14 @@
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, 2.16fr);
         gap: var(--space-m);
-        padding: var(--space-m);
+        /* padding: var(--space-m); */
+        margin-bottom: 5rem;
+    }
+
+    /* Laptop */
+    @media (min-width: 760px) {
+        .about{
+            grid-template-columns: repeat(3,minmax(0, 1fr));
+        }
     }
 </style>
