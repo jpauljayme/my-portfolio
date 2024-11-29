@@ -11,5 +11,7 @@
 <Project />
 
 <style>
-    
+    .header__title{
+        margin-bottom: 5em;
+    }
 </style>

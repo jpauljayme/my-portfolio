@@ -22,7 +22,7 @@
 </div>
 <nav class="overlay {toggle ? 'toggle' : ''}">
     <div>
-        <a href="/jprjayme-works" class="writing-m" onclick={closeNav}>
+        <a href="/" class="writing-m" onclick={closeNav}>
             <span>The pages of John</span>
             <br />
             <span>Paul Jayme</span>
@@ -33,14 +33,14 @@
             <li>
                 <a
                     class="writing-m"
-                    href="/jprjayme-works/works"
+                    href="/works"
                     onclick={closeNav}>Works</a
                 >
             </li>
             <li>
                 <a
                     class="writing-m"
-                    href="/jprjayme-works/info"
+                    href="/info"
                     onclick={closeNav}
                 >
                     Info
@@ -49,7 +49,7 @@
             <li>
                 <a
                     class="writing-m"
-                    href="/jprjayme-works/contact"
+                    href="/contact"
                     onclick={closeNav}
                 >
                     Contacts
