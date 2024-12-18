@@ -2,12 +2,12 @@
     <h2 class="projects__title">Projects</h2>
     <ul class="projects__ul">
         <li>
-            <a href="http://157.245.144.28/cebooklub-rewind" target="_blank"
+            <a href="#" target="_blank" rel="noopener noreferrer"
                 >CEBOOKLUB</a
             >
         </li>
         <li>
-            <a href="#">THE FIG TREE</a>
+            <a href="https://the-fig-tree-pk23q.ondigitalocean.app/" target="_blank" rel="noopener noreferrer">THE FIG TREE</a>
         </li>
         <li>
             <a href="#"> MY CATTITUDES </a>
